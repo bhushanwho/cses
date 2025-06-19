@@ -25,6 +25,7 @@ int main() {
         us.insert(n);
         cout << n << " ";
         // isn't 1 an odd number through? idk, weird test cases
+        // "weird" algorithm checks out
         if( n == 1) break;
         n = n%2 ? 3*n+1 : n/2;
     }
