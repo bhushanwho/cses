@@ -6,9 +6,7 @@ using namespace std;
 #define vvi vector<vector<int>> 
 #define vll vector<long long int> 
 // #define ONLINE_JUDGE 1 
-
-// https://cses.fi/problemset/task/1083
-
+ 
 int main() { 
     #ifndef ONLINE_JUDGE 
     freopen("in.txt", "r", stdin); 
@@ -16,17 +14,18 @@ int main() {
     #endif 
     std::ios::sync_with_stdio(false); 
     
-    ll n;
-    cin >> n;
+    string s;
+    cin >> s;
 
-    ll sum=0;
+    ll p=1, c=0, ans=1;
 
-    for( int i = 1; i < n; i++ ) {
-        ll num; cin >> num;
-        sum += num;
+    for( int i = 1; i < s.size(); i++ ) {
+        c = s[i]==s[i-1] ? p+1 : 1;
+        ans = max( ans, c );
+        p = c;
     }
 
-    cout << (n*(n+1))/2 - sum << '\n';
-
+    cout << ans << '\n';
+    
     return 0; 
 } 

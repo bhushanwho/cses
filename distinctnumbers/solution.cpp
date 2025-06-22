@@ -7,7 +7,7 @@ using namespace std;
 #define vll vector<long long int> 
 // #define ONLINE_JUDGE 1 
 
-// https://cses.fi/problemset/task/1083
+// https://cses.fi/problemset/task/1621
 
 int main() { 
     #ifndef ONLINE_JUDGE 
@@ -15,18 +15,18 @@ int main() {
     freopen("out.txt", "w", stdout); 
     #endif 
     std::ios::sync_with_stdio(false); 
-    
-    ll n;
+
+    int n;
     cin >> n;
 
-    ll sum=0;
-
-    for( int i = 1; i < n; i++ ) {
-        ll num; cin >> num;
-        sum += num;
+    set<int> s;
+    for( int i = 0; i < n; i++ ) {
+        int a; cin >> a;
+        s.insert(a);
     }
 
-    cout << (n*(n+1))/2 - sum << '\n';
-
+    cout << s.size() << '\n';
+ 
+ 
     return 0; 
 } 
